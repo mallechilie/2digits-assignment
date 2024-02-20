@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev:web": "NODE_OPTIONS=--inspect next dev --turbo --experimental-https",
+    "dev:web": "next dev --turbo",
     "dev": "turbo dev:web",
     "build:web": "next build",
     "build": "turbo build:web",
