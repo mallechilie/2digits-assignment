@@ -27,14 +27,7 @@ const config: CodegenConfig = {
       plugins: ['typescript', 'typescript-operations'],
     },
     'src/server/prepr/generated/getSdk.ts': {
-      plugins: [
-        {
-          add: {
-            content: '// @ts-nocheck\n',
-          },
-        },
-        'typescript-generic-sdk',
-      ],
+      plugins: ['typescript-generic-sdk'],
       preset: 'import-types',
       presetConfig: { typesPath: './preprAPI.schema' },
     },
