@@ -3,5 +3,6 @@
   "extends": ["config:recommended"],
   "automergeType": "pr",
   "platformAutomerge": true,
-  "automerge": true
+  "automerge": true,
+  "rangeStrategy": "bump"
 }
