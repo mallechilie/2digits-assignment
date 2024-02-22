@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 2Digits Blog Case
 
-## Getting Started
+## Introduction
 
-First, run the development server:
+Thank you for the great interview we had! Below, as promised, is the application case for the front-end developer position. Once you are done with this you can put it on GitHub and send a link to [luuk@socialbrothers.nl](mailto:luuk@socialbrothers.nl).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Best of luck!
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Assignment
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The company 2Digits would like a new website where customers can see their latest blog posts. To this end, Social Brothers created a design to match the client's requirements.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+There is a main page showing a short introduction with the three latest blog posts below it. There is also an archive page with all blog posts, on which you can page, search and filter. Of course, you should also be able to open a blog post to see the information from it.
 
-## Learn More
+Since the client also wants a mobile application with their blog posts in the future, it was decided to use a headless CMS called [Prepr](https://prepr.io/). The customer has already set things up on this, such as filled blog posts and other elements.
 
-To learn more about Next.js, take a look at the following resources:
+## Kick-off
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+For this assignment, user stories have been created by a colleague so you know exactly what the application needs to meet. In addition, a basic application has already been set up with some of our libraries that we use in this repository.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+For as our projects, we use NextJS and some other libraries that have already been added to this repository, try to continue working with those as well.
 
-## Deploy on Vercel
+## User Stories
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+For the given task, we meticulously formulated a series of user stories, each accompanied by its specific acceptance criteria. It is crucial to execute the implementation of these stories with precision to ensure alignment with the customer's exact requirements and expectations.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- As a user, I want to be able to easily navigate through the website so that I can quickly find the right content.
+  - Header with the 2Digits logo which leads to the homepage
+  - Multiple links which leads to the corresponding pages
+- As a user, I want to be able to find quicklinks at the bottom of the page so that I can access relevant information.
+  - Footer with multiple links which leads to the corresponding pages
+- As a user, I want to see a banner on the main page so I know what the website is about.
+  - Banner with a title, description and background image
+- As a user, I want to see the latest blogs on the main page so I know what's going on.
+  - Show the three newest blogs with a clickthrough to the blog detail page
+  - When there are no items hide this block
+- As a user, I want to see the latest blogs on the main page so I know what's going on.
+  - Show the three newest blogs with a clickthrough to the blog detail page
+  - When there are no items hide this block
+- As a user, I want to be able to navigate through different blog posts on an archive page so I can see everything.
+  - Show 9 blog items on each page
+  - Able to navigate through blog posts using the pagination below the blog items
+- As a user, I want to be able to search an archive page so that I can only view relevant blogs.
+  - Able to search in a text input field
+  - When searching, filter the blog items on the search phrase
+- As a user, I want to be able to filter on an archive page so that I can see only relevant blogs.
+  - Only able to select only on a single filter
+  - When filtering filter the blog items with the current selected filter
+  - When clicking on "All blogs" show all the results
+- As a user, I want to be able to read a a blog post so I can see what it is about.
+  - Able to read a blog article on a seperate page
+  - Show a thumbnail at the top of the page
+  - Show the tags above the blog title
+  - Show a title
+  - Show the excerpt
+  - Show the blog HTML
+- As a user, I want to be able to see a relevant blog post from the current blog post so I can read more information on this topic.
+  - When there are related items, show them with a maximum of 3 items
