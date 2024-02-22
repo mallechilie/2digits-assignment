@@ -4,5 +4,6 @@
   "automergeType": "pr",
   "platformAutomerge": true,
   "automerge": true,
-  "rangeStrategy": "bump"
+  "rangeStrategy": "bump",
+  "reviewers": ["V1RE"]
 }
