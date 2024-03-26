@@ -1,6 +1,6 @@
 ## Introduction
 
-Thank you for the great interview we had! Below, as promised, is the application case for the front-end developer position at 2DIGITS. Once you are done with this you can put it on GitHub and send a link to [luuk@socialbrothers.nl](mailto:luuk@socialbrothers.nl).
+Thank you for the great interview we had! Below, as promised, is the application case for the front-end developer position at 2DIGITS. Once you are done with this you can put it on public GitHub repository and send a link to [luuk@socialbrothers.nl](mailto:luuk@socialbrothers.nl).
 
 Best of luck!
 
@@ -8,7 +8,7 @@ Best of luck!
 
 The company [2DIGITS](https://2digits.nl/) would like a new website where their customers can see their latest blog posts. To this end, [Social Brothers](https://socialbrothers.nl/) created a design to match the client's requirements.
 
-There is a main page showing a short introduction with the three latest blog posts below it. There is also an archive page with all blog posts, on which you can paginate, search and filter. Of course, you should also be able to open a blog post to see the information from it.
+There is a main page showing a short introduction with the three latest blog posts below it. There is also an archive page with all blog posts, on which you can paginate, search and filter. Of course, you should also be able to open a blog post to see more of it's contents.
 
 Since the client also wants a mobile application with their blog posts in the future, it was decided to use a headless CMS called [Prepr](https://prepr.io/). The customer has already set things up on this, such as filled blog posts and other elements.
 
@@ -38,19 +38,19 @@ For the given task, we meticulously formulated a series of user stories, each ac
 - As a user, I want to be able to search through different blog posts on an archive page so that I can only view relevant blogs.
   - Able to search in a text input field
   - When searching filter the blog items on the search phrase
-- As a user, I want to be able to filter blog posts on a archive page so that I can see only relevant blogs.
+- As a user, I want to be able to filter blog posts on an archive page so that I can see only relevant blogs.
   - Only able to select only on a single filter
   - When filtering filter the blog items with the current selected filter
   - When clicking on "All blogs" show all the results
-- As a user, I want to be able to read a a blog post so I can see what it is about.
-  - Able to read a blog article on a seperate page
+- As a user, I want to be able to read a blog post so I can see what it is about.
+  - Able to read a blog article on a separate page
   - Show a thumbnail at the top of the page
   - Show the tags above the blog title
   - Show a title
   - Show the excerpt
   - Show the blog HTML rendered on a safe way, without dangerouslySetInnerHTML
 - As a user, I want to be able to see a relevant blog post from the current blog post so I can read more information on this topic.
-  - When there are releated items, show them with a maximum of 3 items
+  - When there are related items, show them with a maximum of 3 items
   - When there are no items found, hide the block without a message
 
 ## Tips & Tricks
