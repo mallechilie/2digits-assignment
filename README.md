@@ -1,12 +1,12 @@
 ## Introduction
 
-Thank you for the great interview we had! Below, as promised, is the application case for the front-end developer position at 2Digits. Once you are done with this you can put it on GitHub and send a link to [luuk@socialbrothers.nl](mailto:luuk@socialbrothers.nl).
+Thank you for the great interview we had! Below, as promised, is the application case for the front-end developer position at 2DIGITS. Once you are done with this you can put it on GitHub and send a link to [luuk@socialbrothers.nl](mailto:luuk@socialbrothers.nl).
 
 Best of luck!
 
 ## Assignment
 
-The company [2Digits](https://2digits.nl/) would like a new website where their customers can see their latest blog posts. To this end, [Social Brothers](https://socialbrothers.nl/) created a design to match the client's requirements.
+The company [2DIGITS](https://2digits.nl/) would like a new website where their customers can see their latest blog posts. To this end, [Social Brothers](https://socialbrothers.nl/) created a design to match the client's requirements.
 
 There is a main page showing a short introduction with the three latest blog posts below it. There is also an archive page with all blog posts, on which you can paginate, search and filter. Of course, you should also be able to open a blog post to see the information from it.
 
@@ -23,7 +23,7 @@ The design can be seen in [InVision](https://invis.io/XB13G46UCKWN#/475579155_Ho
 For the given task, we meticulously formulated a series of user stories, each accompanied by its specific acceptance criteria. It is crucial to execute the implementation of these stories with precision to ensure alignment with the customer's exact requirements and expectations.
 
 - As a user, I want to be able to easily navigate through the website so that I can quickly find the right content.
-  - Header with the 2Digits logo which leads to the homepage
+  - Header with the 2DIGITS logo which leads to the homepage
   - Multiple links which leads to the corresponding pages
 - As a user, I want to be able to find quicklinks at the bottom of the page so that I can access relevant information.
   - Multiple links which leads to the corresponding pages
