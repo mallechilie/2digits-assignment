@@ -19,7 +19,7 @@ export default function Footer() {
             </Typography>
           </Box>
 
-          <Box sx={{ display: "flex" }}>
+          <Box sx={{ display: 'flex' }}>
             {pages.map((page) => (
               <Button key={page} sx={{ my: 1, color: 'white', display: 'block' }}>
                 {page}

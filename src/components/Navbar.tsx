@@ -18,15 +18,19 @@ export default function Navbar() {
     <Box sx={{ flexGrow: 1, mb: '1px' }}>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <Link href="/">2DIGITS</Link>
-          </Typography>
+          <Box sx={{ display: 'flex', flexGrow: 1 }}>
+            <Link href="/">
+              <Typography variant="h6">2DIGITS</Typography>
+            </Link>
+          </Box>
 
           <Box sx={{ display: 'flex' }}>
             {pages.map((page) => (
-              <Button key={page.name} sx={{ my: 2, color: 'white', display: 'block' }}>
-                <Link href={page.page}>{page.name}</Link>
-              </Button>
+              <Link href={page.page}>
+                <Button key={page.name} sx={{ my: 2, color: 'white', display: 'block' }}>
+                  {page.name}
+                </Button>
+              </Link>
             ))}
           </Box>
         </Toolbar>
