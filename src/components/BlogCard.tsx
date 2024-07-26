@@ -2,15 +2,18 @@ import * as React from 'react';
 
 import { Card, CardContent } from '@mui/material';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+
+import Tag from '@/components/Tag';
 
 export default function BlogCard() {
   return (
-    <Card sx={{ minWidth: 275, maxWidth: 'md' }}>
+    <Card
+      sx={{ minWidth: 275, maxWidth: 'md', border: 'none', boxShadow: 'none', background: 'none' }}>
       <CardContent>
         <Box
           sx={{
+            borderRadius: 1,
             aspectRatio: 350 / 240,
             width: '100%',
             backgroundImage: `url(https://picsum.photos/350/240)`,
@@ -18,27 +21,19 @@ export default function BlogCard() {
             display: 'flex',
             alignItems: 'flex-end',
           }}>
-          <Box
-            sx={{
-              borderRadius: 1,
-              backgroundColor: 'whitesmoke',
-              m: '5px',
-              p: '3px',
-            }}>
-            <Typography>TEKST-TYPE</Typography>
-          </Box>
+          <Tag>TEKST-TYPE</Tag>
         </Box>
 
         <Typography variant="h4" component="div">
           Een interessante titel
         </Typography>
 
-        <Typography variant="body2">
+        <Typography variant="body1">
           Een samenvatting of introductie over lorem ipsum dolor sit amet, consectetur adipiscing
           elit. Nam tempor eros sem, nec elementum mauris blandit nec.
         </Typography>
 
-        <Button size="small">Lees meer {'>'}</Button>
+        <Typography variant="body1">Lees meer {'>'}</Typography>
       </CardContent>
     </Card>
   );
