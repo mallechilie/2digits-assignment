@@ -1,4 +1,5 @@
 TODO:
+
 - general
   - Build header and footer
   - Build blog card
@@ -13,12 +14,14 @@ TODO:
   - Add 2DIGITS svg
   - Improve `Lees meer ->`
   - Improve tags
+  - Add text-overflow to summary `sx={{ textOverflow: 'ellipsis' }}`
 - `/`
   - Build page
   - When there are no blogs found, hide `Nieuwe blogs` => `Geen blogs gevonden`
+  - Scale the welcome message to small screens
 - `/blogs`
-  - Build page 
-  - Improve filters to look as requested 
+  - Build page
+  - Improve filters to look as requested
   - Add `search` section
     - Add suggestions?
   - Make filters functional
@@ -28,4 +31,4 @@ TODO:
   - Show the blog HTML rendered on a safe way, without dangerouslySetInnerHTML
   - Add `Gerelateerde blogs` section
 - refine
-  - As a user, I want to be able to find quicklinks at the bottom of the page so that I can access relevant information. 
+  - As a user, I want to be able to find quicklinks at the bottom of the page so that I can access relevant information.

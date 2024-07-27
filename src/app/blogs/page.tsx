@@ -3,28 +3,25 @@
 import * as React from 'react';
 
 import { ToggleButton, ToggleButtonGroup } from '@mui/material';
-import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
 import CardGrid from '@/components/CardGrid';
+import ContentWidth from '@/components/ContentWidth';
 
 export default function Page() {
   const [filter, setFilter] = React.useState<string | null>('All');
 
-  const handleFilter = (_event: React.MouseEvent<HTMLElement>, newAlignment: string | null) => {
-    setFilter(newAlignment);
+  const handleFilter = (_event: React.MouseEvent<HTMLElement>, newFilter: string | null) => {
+    setFilter(newFilter);
   };
 
   return (
-    <Box>
+    <ContentWidth>
       <Typography variant="h2" sx={{ color: '#0E1527' }}>
         Topics
       </Typography>
 
-      <ToggleButtonGroup
-        value={filter}
-        exclusive
-        onChange={handleFilter}>
+      <ToggleButtonGroup value={filter} exclusive onChange={handleFilter}>
         <ToggleButton value="All">ALL BLOGS</ToggleButton>
 
         <ToggleButton value="Interview">INTERVIEW</ToggleButton>
@@ -35,6 +32,6 @@ export default function Page() {
       </ToggleButtonGroup>
 
       <CardGrid cards={[0, 0, 0, 0, 0, 0, 0, 0, 0]} />
-    </Box>
+    </ContentWidth>
   );
 }

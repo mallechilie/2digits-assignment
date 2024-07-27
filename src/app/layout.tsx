@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
+import Box from '@mui/material/Box';
 
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
@@ -20,11 +21,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en">
       <body className={inter.className}>
         <AppRouterCacheProvider>
-          <Navbar />
+          <Box maxWidth={'1440px'} margin={'auto'}>
+            <Navbar />
 
-          {children}
+            {children}
 
-          <Footer />
+            <Footer />
+          </Box>
         </AppRouterCacheProvider>
       </body>
     </html>
