@@ -1,10 +1,12 @@
 import * as React from 'react';
 
+import { Grid } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
+
+import TitleButton from '@/components/TitleButton';
+import ContentWidth from '@/components/wrappers/ContentWidth';
 
 const pages = ['Terms and conditions', 'Privacy statement'];
 
@@ -12,21 +14,29 @@ export default function Footer() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Toolbar>
-          <Box>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              2DIGITS
-            </Typography>
-          </Box>
+        <ContentWidth>
+          <Grid container spacing={2}>
+            <Grid item xs={6} md={4}>
+              <TitleButton />
+            </Grid>
 
-          <Box sx={{ display: 'flex' }}>
-            {pages.map((page) => (
-              <Button key={page} sx={{ my: 1, color: 'white', display: 'block' }}>
-                {page}
-              </Button>
-            ))}
-          </Box>
-        </Toolbar>
+            <Grid item xs={6} md={4}>
+              {pages.map((page) => (
+                <Button
+                  key={page}
+                  sx={{
+                    color: 'white',
+                    textAlign: 'left',
+                    justifyContent: 'flex-start',
+                    overflow: 'hidden',
+                    width: 1,
+                  }}>
+                  {page}
+                </Button>
+              ))}
+            </Grid>
+          </Grid>
+        </ContentWidth>
       </AppBar>
     </Box>
   );

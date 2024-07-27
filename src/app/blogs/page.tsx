@@ -6,7 +6,7 @@ import { ToggleButton, ToggleButtonGroup } from '@mui/material';
 import Typography from '@mui/material/Typography';
 
 import CardGrid from '@/components/CardGrid';
-import ContentWidth from '@/components/ContentWidth';
+import ContentWidth from '@/components/wrappers/ContentWidth';
 
 export default function Page() {
   const [filter, setFilter] = React.useState<string | null>('All');

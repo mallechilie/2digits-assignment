@@ -1,6 +1,6 @@
 import Blogs from '@/app/blogs';
 import Welcome from '@/app/welcome';
-import ContentWidth from '@/components/ContentWidth';
+import ContentWidth from '@/components/wrappers/ContentWidth';
 
 export default function Home() {
   return (

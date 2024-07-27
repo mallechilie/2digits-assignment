@@ -5,8 +5,9 @@ import Link from 'next/link';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
+
+import TitleButton from '@/components/TitleButton';
+import ContentWidth from '@/components/wrappers/ContentWidth';
 
 const pages = [
   { name: 'Home', page: '/' },
@@ -15,25 +16,27 @@ const pages = [
 
 export default function Navbar() {
   return (
-    <Box sx={{ flexGrow: 1, mb: '1px' }}>
+    <Box sx={{ mb: '1px' }}>
       <AppBar position="static">
-        <Toolbar>
-          <Box sx={{ display: 'flex', flexGrow: 1 }}>
-            <Link href="/">
-              <Typography variant="h6">2DIGITS</Typography>
-            </Link>
-          </Box>
+        <ContentWidth
+          sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+          }}>
+          <TitleButton />
 
-          <Box sx={{ display: 'flex' }}>
+          <div style={{ display: 'flex' }}>
             {pages.map((page) => (
-              <Link href={page.page}>
-                <Button key={page.name} sx={{ my: 2, color: 'white', display: 'block' }}>
-                  {page.name}
-                </Button>
-              </Link>
+              <Button
+                key={page.name}
+                component={Link}
+                href={page.page}
+                sx={{ color: 'white', display: 'block' }}>
+                {page.name}
+              </Button>
             ))}
-          </Box>
-        </Toolbar>
+          </div>
+        </ContentWidth>
       </AppBar>
     </Box>
   );
