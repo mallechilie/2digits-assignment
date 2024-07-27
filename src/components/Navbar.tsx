@@ -11,7 +11,7 @@ import ContentWidth from '@/components/wrappers/ContentWidth';
 
 const pages = [
   { name: 'Home', page: '/' },
-  { name: 'Blogs', page: 'blogs' },
+  { name: 'Blogs', page: '/blogs' },
 ];
 
 export default function Navbar() {

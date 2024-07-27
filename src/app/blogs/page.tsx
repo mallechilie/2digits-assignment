@@ -31,7 +31,7 @@ export default function Page() {
         <ToggleButton value="Whitepaper">WHITEPAPER</ToggleButton>
       </ToggleButtonGroup>
 
-      <CardGrid cards={[0, 0, 0, 0, 0, 0, 0, 0, 0]} />
+      <CardGrid ids={['0', '1', '2', '3', '4', '5', '6', '7', '8']} />
     </ContentWidth>
   );
 }

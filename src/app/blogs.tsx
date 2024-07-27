@@ -12,7 +12,7 @@ export default function Blogs() {
         De nieuwste blogs
       </Typography>
 
-      <CardGrid cards={[0, 0, 0]} />
+      <CardGrid ids={['0', '1', '2']} />
     </Box>
   );
 }

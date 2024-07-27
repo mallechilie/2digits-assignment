@@ -9,14 +9,15 @@ TODO:
   - ~~Add margins to width~~
     - ~~Make those globally available~~
   - Put all magic numbers in one place (theme)
+  - Add 2digits logo
 - Theme
   - Add correct typography
   - Add correct colors to navbar and footer
+  - Color footer divider correctly
   - Add 2DIGITS svg
   - ~~Improve `Lees meer ->`~~
   - Improve tags
   - Add text-overflow to summary
-  - Color footer divider correctly
   - Uncapitalize buttons
 - `/`
   - ~~Build page~~
@@ -28,9 +29,9 @@ TODO:
   - Add `search` section
   - Make filters functional
 - `/blog/[id]`
-  - **Build page**
+  - ~~Build page~~
   - Show the blog HTML rendered on a safe way, without dangerouslySetInnerHTML
-  - Add `Gerelateerde blogs` section
+  - ~~Add `Gerelateerde blogs` section~~
 - refine
   - As a user, I want to be able to find quicklinks at the bottom of the page so that I can access relevant information.
 - Out of scope
