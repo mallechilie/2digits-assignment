@@ -3,6 +3,7 @@ import * as React from 'react';
 import { Grid } from '@mui/material';
 
 import BlogCard from '@/components/BlogCard';
+import GridContainer from '@/components/wrappers/GridContainer';
 
 const showCard = () => (
   <Grid item xs={12} sm={6} md={4}>
@@ -10,9 +11,5 @@ const showCard = () => (
   </Grid>
 );
 export default function CardGrid(props: { cards: unknown[] }) {
-  return (
-    <Grid container spacing={2}>
-      {props.cards.map(() => showCard())}
-    </Grid>
-  );
+  return <GridContainer>{props.cards.map(() => showCard())}</GridContainer>;
 }

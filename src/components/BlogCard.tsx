@@ -10,7 +10,7 @@ export default function BlogCard() {
   return (
     <Card
       sx={{ minWidth: 275, maxWidth: 'md', border: 'none', boxShadow: 'none', background: 'none' }}>
-      <CardContent>
+      <CardContent sx={{ px: 0 }}>
         <Box
           sx={{
             borderRadius: 1,
