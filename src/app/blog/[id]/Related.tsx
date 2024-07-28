@@ -14,7 +14,7 @@ export default function Related() {
           Gerelateerde blogs
         </Typography>
 
-        <CardGrid ids={['0', '1', '2']} />
+        <CardGrid blogs={['0', '1', '2']} />
       </ContentWidth>
     </WideBackground>
   );

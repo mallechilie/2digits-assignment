@@ -4,15 +4,22 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
 import CardGrid from '@/components/CardGrid';
+import { PreprSdk } from '@/server/prepr';
 
-export default function Blogs() {
-  return (
+export default async function Blogs() {
+  const { Blogs } = await PreprSdk.Blogs({ sort: 'publish_on_DESC', limit: 3 });
+  const _blogs = Blogs?.items;
+  return _blogs ? (
     <Box>
       <Typography variant="h2" sx={{ color: '#0E1527' }}>
         De nieuwste blogs
       </Typography>
 
-      <CardGrid ids={['0', '1', '2']} />
+      <CardGrid blogs={_blogs} />
     </Box>
+  ) : (
+    <Typography variant="h2" sx={{ color: '#0E1527' }}>
+      Geen nieuwe blogs...
+    </Typography>
   );
 }

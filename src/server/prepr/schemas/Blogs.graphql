@@ -1,0 +1,27 @@
+query Blogs($limit: Int, $sort: BlogSortInput) {
+  Blogs(limit: $limit, sort: $sort) {
+    items {
+      _id
+      _publish_on
+      title
+      banner_image {
+        url
+        height
+        width
+      }
+      categories {
+        body
+      }
+      content {
+        ... on Text {
+          text
+          format
+        }
+      }
+      related_blogs {
+        title
+      }
+    }
+    total
+  }
+}

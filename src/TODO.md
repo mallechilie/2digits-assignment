@@ -21,7 +21,7 @@ TODO:
   - Uncapitalize buttons
 - `/`
   - ~~Build page~~
-  - When there are no blogs found, change `Nieuwe blogs` => `Geen blogs gevonden`
+  - ~~When there are no blogs found, change `Nieuwe blogs` => `Geen blogs gevonden`~~
   - Scale the welcome message to small screens
 - `/blogs`
   - ~~Build page~~
@@ -30,7 +30,7 @@ TODO:
   - Make filters functional
 - `/blog/[id]`
   - ~~Build page~~
-  - Show the blog HTML rendered on a safe way, without dangerouslySetInnerHTML
+  - Show the blog HTML rendered on a safe way, without `dangerouslySetInnerHTML`
   - ~~Add `Gerelateerde blogs` section~~
 - refine
   - As a user, I want to be able to find quicklinks at the bottom of the page so that I can access relevant information.
