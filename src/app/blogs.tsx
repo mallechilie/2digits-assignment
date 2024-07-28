@@ -7,7 +7,7 @@ import CardGrid from '@/components/CardGrid';
 import { PreprSdk } from '@/server/prepr';
 
 export default async function Blogs() {
-  const { Blogs } = await PreprSdk.Blogs({ sort: 'publish_on_DESC', limit: 3 });
+  const { Blogs } = await PreprSdk.NewBlogs({ limit: 3 });
   const _blogs = Blogs?.items;
   return _blogs ? (
     <Box>

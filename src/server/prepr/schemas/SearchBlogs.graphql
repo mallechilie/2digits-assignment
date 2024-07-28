@@ -1,0 +1,27 @@
+query SearchBlogs($limit: Int, $skip: Int, $where: BlogWhereInput) {
+  Blogs(limit: $limit, skip: $skip, where: $where, sort: publish_on_DESC) {
+    items {
+      _id
+      _publish_on
+      title
+      banner_image {
+        url
+        height
+        width
+      }
+      categories {
+        body
+      }
+      content {
+        ... on Text {
+          text
+          format
+        }
+      }
+      related_blogs {
+        title
+      }
+    }
+    total
+  }
+}

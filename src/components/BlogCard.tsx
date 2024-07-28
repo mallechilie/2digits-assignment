@@ -8,11 +8,10 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
+import { Blog } from '@/Blog';
 import Tag from '@/components/Tag';
-import type { PreprBlogsQuery_Blogs_Blogs_items_Blog } from '@/server/prepr/generated/preprAPI.schema';
 
-export default function BlogCard(props: {blog: PreprBlogsQuery_Blogs_Blogs_items_Blog}) {
-  console.log(props);
+export default function BlogCard(props: { blog: Blog }) {
   return (
     <Card sx={{ border: 'none', boxShadow: 'none', background: 'none' }}>
       <CardContent sx={{ px: 0 }}>
@@ -28,7 +27,9 @@ export default function BlogCard(props: {blog: PreprBlogsQuery_Blogs_Blogs_items
             display: 'flex',
             alignItems: 'flex-end',
           }}>
-          <Tag tagName={props.blog.categories[0]?.body ?? 'Tekst type'} />
+          {props.blog.categories.map((category) => (
+            <Tag tagName={category.body ?? 'Empty'} />
+          ))}
         </Box>
 
         <Typography variant="h4" component="div">

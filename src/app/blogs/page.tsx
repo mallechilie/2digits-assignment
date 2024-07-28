@@ -1,56 +1,36 @@
-'use client';
-
 import * as React from 'react';
 
-import { TextField, ToggleButton, ToggleButtonGroup } from '@mui/material';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 
+import Filters from '@/app/blogs/Filters';
 import CardGrid from '@/components/CardGrid';
 import ContentWidth from '@/components/wrappers/ContentWidth';
-import WideBackground from '@/components/wrappers/WideBackground';
+import { PreprSdk } from '@/server/prepr';
 
-export default function Page() {
-  const [filter, setFilter] = React.useState<string | null>('All');
-
-  const handleFilter = (_event: React.MouseEvent<HTMLElement>, newFilter: string | null) => {
-    setFilter(newFilter);
-  };
+export default async function Page({
+  searchParams,
+}: {
+  searchParams?: { page?: number; tag?: string; title?: string };
+}) {
+  const result = await PreprSdk.SearchBlogs({
+    limit: 9,
+    skip: (searchParams?.page ?? 1) * 9 - 9,
+    where: {
+      _tags_any: searchParams?.tag ? [searchParams.tag] : [],
+      title_contains: searchParams?.title ?? '',
+    },
+  });
+  const Blogs = result.Blogs?.items;
+  // const pagesTotal = (result.Blogs?.total ?? 0) / 9;
 
   return (
     <Box>
-      <WideBackground>
+      <Filters />
+      {Blogs ? (
         <ContentWidth>
-          <Typography variant="h2" sx={{ color: '#0E1527' }}>
-            Search for blogs
-          </Typography>
-
-          <Box sx={{ display: 'flex' }}>
-            <TextField sx={{ width: '100%' }} label="Search" />
-
-            <Button sx={{ color: 'white', display: 'block' }}>{'Search'}</Button>
-          </Box>
+          <CardGrid blogs={Blogs} />
         </ContentWidth>
-      </WideBackground>
-
-      <ContentWidth>
-        <Typography variant="h2" sx={{ color: '#0E1527' }}>
-          Topics
-        </Typography>
-
-        <ToggleButtonGroup value={filter} exclusive onChange={handleFilter}>
-          <ToggleButton value="All">ALL BLOGS</ToggleButton>
-
-          <ToggleButton value="Interview">INTERVIEW</ToggleButton>
-
-          <ToggleButton value="Blog">BLOG</ToggleButton>
-
-          <ToggleButton value="Whitepaper">WHITEPAPER</ToggleButton>
-        </ToggleButtonGroup>
-
-        <CardGrid blogs={['0', '1', '2', '3', '4', '5', '6', '7', '8']} />
-      </ContentWidth>
+      ) : undefined}
     </Box>
   );
 }

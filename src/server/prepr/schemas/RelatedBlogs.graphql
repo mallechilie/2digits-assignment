@@ -1,5 +1,5 @@
-query Blogs($limit: Int, $sort: BlogSortInput) {
-  Blogs(limit: $limit, sort: $sort) {
+query RelatedBlogs($id: String!, $limit: Int) {
+  Similar_Blogs(id: $id, limit: $limit) {
     items {
       _id
       _publish_on
@@ -22,6 +22,5 @@ query Blogs($limit: Int, $sort: BlogSortInput) {
         title
       }
     }
-    total
   }
 }

@@ -5,7 +5,7 @@ TODO:
   - ~~Build blog card~~
   - ~~Build blog card collection~~
   - ~~Better link component~~
-  - **Hook up to database**
+  - ~~Hook up to database~~
   - ~~Add margins to width~~
     - ~~Make those globally available~~
   - Put all magic numbers in one place (theme)
@@ -26,7 +26,7 @@ TODO:
 - `/blogs`
   - ~~Build page~~
   - Improve filters styling as requested
-  - Add `search` section
+  - ~~Add `search` section~~
   - Make filters functional
 - `/blog/[id]`
   - ~~Build page~~
