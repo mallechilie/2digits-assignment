@@ -8,6 +8,7 @@ export default function Blog(props: { tag: string; content: string }) {
   return (
     <Box>
       <Tag tagName={props.tag} />
+
       {props.content}
     </Box>
   );

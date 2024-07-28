@@ -23,6 +23,7 @@ export default function Footer() {
 
             <Grid item xs={6} md={4} sx={{ display: 'flex' }}>
               <Divider orientation="vertical" variant="middle" flexItem sx={{ color: 'white' }} />
+
               <div>
                 {pages.map((page) => (
                   <Button
