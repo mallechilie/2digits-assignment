@@ -25,7 +25,8 @@ export default async function Page({
 
   return (
     <Box>
-      <Filters />
+      <Filters params={{ title: searchParams?.title, tag: searchParams?.tag }} />
+
       {Blogs ? (
         <ContentWidth>
           <CardGrid blogs={Blogs} />

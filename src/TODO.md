@@ -10,6 +10,8 @@ TODO:
     - ~~Make those globally available~~
   - Put all magic numbers in one place (theme)
   - Add 2digits logo
+  - Add correct intro text to cards
+  - Keep the footer to the bottom of the screen
 - Theme
   - Add correct typography
   - Add correct colors to navbar and footer
@@ -23,11 +25,13 @@ TODO:
   - ~~Build page~~
   - ~~When there are no blogs found, change `Nieuwe blogs` => `Geen blogs gevonden`~~
   - Scale the welcome message to small screens
+  - Correct image and welcome text
 - `/blogs`
   - ~~Build page~~
   - Improve filters styling as requested
   - ~~Add `search` section~~
-  - Make filters functional
+  - ~~Make filters functional~~
+  - Add pages
 - `/blog/[id]`
   - ~~Build page~~
   - Show the blog HTML rendered on a safe way, without `dangerouslySetInnerHTML`
@@ -38,3 +42,4 @@ TODO:
   - Test on 4k monitor
   - Write blog-post page
   - Add suggestions to `search` section
+  - scale images from database

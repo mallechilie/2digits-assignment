@@ -8,7 +8,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-import { Blog } from '@/Blog';
+import type { Blog } from '@/Blog';
 import Tag from '@/components/Tag';
 
 export default function BlogCard(props: { blog: Blog }) {
@@ -28,7 +28,7 @@ export default function BlogCard(props: { blog: Blog }) {
             alignItems: 'flex-end',
           }}>
           {props.blog.categories.map((category) => (
-            <Tag tagName={category.body ?? 'Empty'} />
+            <Tag tagName={category.body ?? 'Empty'} key={category.body}/>
           ))}
         </Box>
 
