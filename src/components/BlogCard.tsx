@@ -28,7 +28,7 @@ export default function BlogCard(props: { blog: Blog }) {
             alignItems: 'flex-end',
           }}>
           {props.blog.categories.map((category) => (
-            <Tag tagName={category.body ?? 'Empty'} key={category.body}/>
+            <Tag tagName={category.body ?? 'Empty'} key={category.body} />
           ))}
         </Box>
 

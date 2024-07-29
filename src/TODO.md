@@ -31,7 +31,7 @@ TODO:
   - Improve filters styling as requested
   - ~~Add `search` section~~
   - ~~Make filters functional~~
-  - Add pages
+  - ~~Add pages~~
 - `/blog/[id]`
   - ~~Build page~~
   - Show the blog HTML rendered on a safe way, without `dangerouslySetInnerHTML`

@@ -1,8 +1,6 @@
 import * as React from 'react';
 
-import Box from '@mui/material/Box';
-
-import Filters from '@/app/blogs/Filters';
+import Search from '@/app/blogs/Search';
 import CardGrid from '@/components/CardGrid';
 import ContentWidth from '@/components/wrappers/ContentWidth';
 import { PreprSdk } from '@/server/prepr';
@@ -21,17 +19,23 @@ export default async function Page({
     },
   });
   const Blogs = result.Blogs?.items;
-  // const pagesTotal = (result.Blogs?.total ?? 0) / 9;
+  const pagesTotal = Math.ceil((result.Blogs?.total ?? 0) / 9);
 
   return (
-    <Box>
-      <Filters params={{ title: searchParams?.title, tag: searchParams?.tag }} />
-
+    <Search
+      params={{
+        page: searchParams?.page,
+        tag: searchParams?.tag,
+        title: searchParams?.title,
+        maxPages: pagesTotal,
+      }}>
       {Blogs ? (
-        <ContentWidth>
-          <CardGrid blogs={Blogs} />
-        </ContentWidth>
+        <div>
+          <ContentWidth>
+            <CardGrid blogs={Blogs} />
+          </ContentWidth>
+        </div>
       ) : undefined}
-    </Box>
+    </Search>
   );
 }

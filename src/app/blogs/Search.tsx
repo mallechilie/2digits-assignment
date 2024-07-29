@@ -1,10 +1,11 @@
 'use client';
 
 import * as React from 'react';
+import type { ChangeEvent } from 'react';
 
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
-import { TextField, ToggleButton, ToggleButtonGroup } from '@mui/material';
+import { Pagination, TextField, ToggleButton, ToggleButtonGroup } from '@mui/material';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
@@ -17,8 +18,9 @@ function getStartTag(tagList: string[], tag: string = '') {
   return tagList.includes(tag) ? tag : '';
 }
 
-export default function Filters(props: {
-  params?: { page?: number; tag?: string; title?: string };
+export default function Search(props: {
+  params?: { page?: number; maxPages: number; tag?: string; title?: string };
+  children: React.ReactNode;
 }) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
@@ -33,12 +35,20 @@ export default function Filters(props: {
     setTag(newTag);
     handleSearch(newTag, title);
   };
+  const [page, setPage] = React.useState<number>(props.params?.page ?? 1);
+  const handlePage = (_event: ChangeEvent<unknown>, newPage: number) => {
+    setPage(newPage);
+    const params = new URLSearchParams(searchParams);
+    params.set('page', String(newPage));
+    replace(`${pathname}?${params.toString()}`);
+  };
 
   function handleSearch(_tag: string = tag, _title: string = title) {
     const params = new URLSearchParams(searchParams);
     _tag ? params.set('tag', _tag) : params.delete('tag');
     _title ? params.set('title', _title) : params.delete('title');
     params.delete('page');
+    setPage(1);
     replace(`${pathname}?${params.toString()}`);
   }
 
@@ -86,6 +96,12 @@ export default function Filters(props: {
             </ToggleButton>
           ))}
         </ToggleButtonGroup>
+      </ContentWidth>
+
+      {props.children}
+
+      <ContentWidth sx={{ display: 'flex', justifyContent: 'center' }}>
+        <Pagination count={props.params?.maxPages ?? 1} page={page} onChange={handlePage} />
       </ContentWidth>
     </Box>
   );

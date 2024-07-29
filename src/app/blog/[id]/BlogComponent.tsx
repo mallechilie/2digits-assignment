@@ -10,7 +10,7 @@ export default function BlogComponent(props: { blog: Blog }) {
   return (
     <Box>
       {props.blog.categories.map((category) => (
-        <Tag tagName={category.body ?? 'Empty'} key={category.body}/>
+        <Tag tagName={category.body ?? 'Empty'} key={category.body} />
       ))}
 
       <Typography variant="h3">{props.blog.title}</Typography>
