@@ -38,9 +38,8 @@ export default function BlogCard(props: { blog: Blog }) {
         </Typography>
 
         <Typography variant="body1">
-          {(props.blog.content?.[0] as PreprBlogQuery_Blog_Blog_content_Text)?.text
-            ? (props.blog.content?.[0] as PreprBlogQuery_Blog_Blog_content_Text)?.text
-            : 'Een samenvatting...'}
+          {(props.blog.content?.[0] as PreprBlogQuery_Blog_Blog_content_Text).text ??
+            'Een samenvatting...'}
         </Typography>
 
         <Button sx={{ pl: 0, color: 'black' }} component={Link} href={`/blog/${props.blog._id}`}>
