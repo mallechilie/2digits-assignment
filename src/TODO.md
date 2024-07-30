@@ -5,11 +5,13 @@ TODO:
   - ~~Build blog card~~
   - ~~Build blog card collection~~
   - ~~Better link component~~
-  - **Hook up to database**
+  - ~~Hook up to database~~
   - ~~Add margins to width~~
     - ~~Make those globally available~~
   - Put all magic numbers in one place (theme)
   - Add 2digits logo
+  - Add correct intro text to cards
+  - Keep the footer to the bottom of the screen
 - Theme
   - Add correct typography
   - Add correct colors to navbar and footer
@@ -21,16 +23,19 @@ TODO:
   - Uncapitalize buttons
 - `/`
   - ~~Build page~~
-  - When there are no blogs found, change `Nieuwe blogs` => `Geen blogs gevonden`
+  - ~~When there are no blogs found, change `Nieuwe blogs` => `Geen blogs gevonden`~~
   - Scale the welcome message to small screens
+  - ~~Correct image and welcome text~~
 - `/blogs`
   - ~~Build page~~
   - Improve filters styling as requested
-  - Add `search` section
-  - Make filters functional
+  - ~~Add `search` section~~
+  - ~~Make filters functional~~
+  - ~~Add pages~~
+  - image header
 - `/blog/[id]`
   - ~~Build page~~
-  - Show the blog HTML rendered on a safe way, without dangerouslySetInnerHTML
+  - ~~Show the blog HTML rendered on a safe way, without `dangerouslySetInnerHTML`~~
   - ~~Add `Gerelateerde blogs` section~~
 - refine
   - As a user, I want to be able to find quicklinks at the bottom of the page so that I can access relevant information.
@@ -38,3 +43,7 @@ TODO:
   - Test on 4k monitor
   - Write blog-post page
   - Add suggestions to `search` section
+  - Scale images from database
+  - Render non-text elements
+  - Privacy statement
+  - Terms and conditions

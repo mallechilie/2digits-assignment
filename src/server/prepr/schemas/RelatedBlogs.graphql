@@ -1,0 +1,26 @@
+query RelatedBlogs($id: String!, $limit: Int) {
+  Similar_Blogs(id: $id, limit: $limit) {
+    items {
+      _id
+      _publish_on
+      title
+      banner_image {
+        url
+        height
+        width
+      }
+      categories {
+        body
+      }
+      content {
+        ... on Text {
+          text
+          format
+        }
+      }
+      related_blogs {
+        title
+      }
+    }
+  }
+}

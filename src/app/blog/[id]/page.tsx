@@ -1,20 +1,25 @@
 import Box from '@mui/material/Box';
 
-import Blog from '@/app/blog/[id]/Blog';
+import BlogComponent from '@/app/blog/[id]/BlogComponent';
 import Header from '@/app/blog/[id]/Header';
 import Related from '@/app/blog/[id]/Related';
 import ContentWidth from '@/components/wrappers/ContentWidth';
+import { PreprSdk } from '@/server/prepr';
 
-export default function Page() {
-  return (
+export default async function Page({ params }: { params: { id: string } }) {
+  const { Blog } = await PreprSdk.Blog({ blogId: params.id });
+
+  return Blog ? (
     <Box>
-      <Header imageUrl={`url(https://picsum.photos/1440/600?grayscale)`} />
+      <Header imageUrl={`url(${Blog.banner_image.url})`} />
 
       <ContentWidth>
-        <Blog content={'Content'} tag={'Interview'} />
+        <BlogComponent blog={Blog} />
       </ContentWidth>
 
-      <Related />
+      <Related id={params.id} />
     </Box>
+  ) : (
+    <Box></Box>
   );
 }

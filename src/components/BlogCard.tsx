@@ -8,37 +8,41 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
+import type { Blog } from '@/Blog';
 import Tag from '@/components/Tag';
+import type { PreprBlogQuery_Blog_Blog_content_Text } from '@/server/prepr/generated/preprAPI.schema';
 
-export default function BlogCard(props: { id: string }) {
+export default function BlogCard(props: { blog: Blog }) {
   return (
     <Card sx={{ border: 'none', boxShadow: 'none', background: 'none' }}>
       <CardContent sx={{ px: 0 }}>
         <Box
           component={Link}
-          href={`/blog/${props.id}`}
+          href={`/blog/${props.blog._id}`}
           sx={{
             borderRadius: 1,
             aspectRatio: 350 / 240,
             width: '100%',
-            backgroundImage: `url(https://picsum.photos/350/240)`,
+            backgroundImage: `url(${props.blog.banner_image.url})`,
             backgroundSize: 'cover',
             display: 'flex',
             alignItems: 'flex-end',
           }}>
-          <Tag tagName={'Tekst type'} />
+          {props.blog.categories.map((category) => (
+            <Tag tagName={category.body ?? 'Empty'} key={category.body} />
+          ))}
         </Box>
 
         <Typography variant="h4" component="div">
-          Een interessante titel
+          {props.blog.title}
         </Typography>
 
         <Typography variant="body1">
-          Een samenvatting of introductie over lorem ipsum dolor sit amet, consectetur adipiscing
-          elit. Nam tempor eros sem, nec elementum mauris blandit nec.
+          {(props.blog.content?.[0] as PreprBlogQuery_Blog_Blog_content_Text).text ??
+            'Een samenvatting...'}
         </Typography>
 
-        <Button sx={{ pl: 0, color: 'black' }} component={Link} href={`/blog/${props.id}`}>
+        <Button sx={{ pl: 0, color: 'black' }} component={Link} href={`/blog/${props.blog._id}`}>
           <Typography variant="body2">
             Lees meer <ArrowForwardIcon />
           </Typography>

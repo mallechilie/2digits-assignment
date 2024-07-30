@@ -21,7 +21,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en">
       <body className={inter.className}>
         <AppRouterCacheProvider>
-          <Box maxWidth={'1440px'} margin={'auto'}>
+          <Box maxWidth={'1440px'} margin={'auto'} minHeight={'100vh'}>
             <Navbar />
 
             {children}

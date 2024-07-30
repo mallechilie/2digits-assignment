@@ -1,0 +1,26 @@
+query PageFromTitle($where: PageWhereInput) {
+  Pages(where: $where) {
+    total
+    items {
+      title
+      page_header {
+        _id
+        _context {
+          kind
+          variant_key
+          group_id
+          variant_id
+          segments
+          countries
+        }
+        title
+        text
+        image {
+          width
+          height
+          url
+        }
+      }
+    }
+  }
+}
