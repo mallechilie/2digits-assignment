@@ -10,6 +10,7 @@ import Typography from '@mui/material/Typography';
 
 import type { Blog } from '@/Blog';
 import Tag from '@/components/Tag';
+import type { PreprBlogQuery_Blog_Blog_content_Text } from '@/server/prepr/generated/preprAPI.schema';
 
 export default function BlogCard(props: { blog: Blog }) {
   return (
@@ -37,8 +38,9 @@ export default function BlogCard(props: { blog: Blog }) {
         </Typography>
 
         <Typography variant="body1">
-          Een samenvatting of introductie over lorem ipsum dolor sit amet, consectetur adipiscing
-          elit. Nam tempor eros sem, nec elementum mauris blandit nec.
+          {(props.blog.content?.[0] as PreprBlogQuery_Blog_Blog_content_Text)?.text
+            ? (props.blog.content?.[0] as PreprBlogQuery_Blog_Blog_content_Text)?.text
+            : 'Een samenvatting...'}
         </Typography>
 
         <Button sx={{ pl: 0, color: 'black' }} component={Link} href={`/blog/${props.blog._id}`}>

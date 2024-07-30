@@ -18,7 +18,7 @@ export default async function Welcome() {
         backgroundSize: 'cover',
         height: 600,
         textAlign: 'center',
-          overflow: "hidden"
+        overflow: 'hidden',
       }}>
       <Typography variant="h1" sx={{ color: 'white', width: 7 / 10, margin: 'auto' }}>
         {page.page_header.title}
