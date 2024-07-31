@@ -32,7 +32,7 @@ TODO:
   - ~~Add `search` section~~
   - ~~Make filters functional~~
   - ~~Add pages~~
-  - image header
+  - ~~image header~~
 - `/blog/[id]`
   - ~~Build page~~
   - ~~Show the blog HTML rendered on a safe way, without `dangerouslySetInnerHTML`~~

@@ -1,23 +1,24 @@
 import * as React from 'react';
 
+import type { SxProps } from '@mui/material';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
 import type { Page } from '@/Page';
 import { PreprSdk } from '@/server/prepr';
 
-export default async function Welcome() {
-  const { Pages } = await PreprSdk.PageFromTitle({ where: { title: 'Home' } });
+export default async function Header(props: { title: string; sx?: SxProps }) {
+  const { Pages } = await PreprSdk.PageFromTitle({ where: { title: props.title } });
 
   const page = Pages?.items[0] as Page;
 
   return (
     <Box
       sx={{
+        ...props.sx,
         backgroundImage: `url(${page.page_header.image.url})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        height: 600,
         textAlign: 'center',
         display: 'flex',
         flexDirection: 'column',

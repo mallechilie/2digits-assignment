@@ -1,11 +1,11 @@
-import Blogs from '@/app/blogs';
-import Welcome from '@/app/welcome';
+import Blogs from '@/app/Blogs';
+import Header from '@/components/Header';
 import ContentWidth from '@/components/wrappers/ContentWidth';
 
 export default function Home() {
   return (
     <main>
-      <Welcome />
+      <Header title={'Home'} sx={{ height: 600 }} />
 
       <ContentWidth sx={{ py: '64px' }}>
         <Blogs />
