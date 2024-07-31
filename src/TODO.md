@@ -14,36 +14,34 @@ TODO:
   - Keep the footer to the bottom of the screen
 - Theme
   - Add correct typography
-  - Add correct colors to navbar and footer
-  - Color footer divider correctly
+  - ~~Add correct colors to navbar and footer~~
+  - ~~Color footer divider correctly~~
   - Add 2DIGITS svg
   - ~~Improve `Lees meer ->`~~
-  - Improve tags
-  - Add text-overflow to summary
-  - Uncapitalize buttons
+  - ~~Improve tags~~
+  - ~~Add text-overflow to summary~~
+  - ~~Uncapitalize buttons~~
 - `/`
   - ~~Build page~~
   - ~~When there are no blogs found, change `Nieuwe blogs` => `Geen blogs gevonden`~~
-  - Scale the welcome message to small screens
+  - ~~Scale the welcome message to small screens~~
   - ~~Correct image and welcome text~~
 - `/blogs`
   - ~~Build page~~
-  - Improve filters styling as requested
+  - ~~Improve filters styling as requested~~
   - ~~Add `search` section~~
   - ~~Make filters functional~~
   - ~~Add pages~~
-  - image header
+  - ~~image header~~
 - `/blog/[id]`
   - ~~Build page~~
   - ~~Show the blog HTML rendered on a safe way, without `dangerouslySetInnerHTML`~~
   - ~~Add `Gerelateerde blogs` section~~
-- refine
-  - As a user, I want to be able to find quicklinks at the bottom of the page so that I can access relevant information.
 - Out of scope
   - Test on 4k monitor
   - Write blog-post page
   - Add suggestions to `search` section
-  - Scale images from database
   - Render non-text elements
   - Privacy statement
   - Terms and conditions
+  - fancy safe html rendering

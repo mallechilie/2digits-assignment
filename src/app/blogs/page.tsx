@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import Search from '@/app/blogs/Search';
 import CardGrid from '@/components/CardGrid';
+import Header from '@/components/Header';
 import ContentWidth from '@/components/wrappers/ContentWidth';
 import { PreprSdk } from '@/server/prepr';
 
@@ -22,20 +23,24 @@ export default async function Page({
   const pagesTotal = Math.ceil((result.Blogs?.total ?? 0) / 9);
 
   return (
-    <Search
-      params={{
-        page: searchParams?.page,
-        tag: searchParams?.tag,
-        title: searchParams?.title,
-        maxPages: pagesTotal,
-      }}>
-      {Blogs ? (
-        <div>
-          <ContentWidth>
-            <CardGrid blogs={Blogs} />
-          </ContentWidth>
-        </div>
-      ) : undefined}
-    </Search>
+    <>
+      <Header title={'Blog'} sx={{ height: '300px' }} />
+
+      <Search
+        params={{
+          page: searchParams?.page,
+          tag: searchParams?.tag,
+          title: searchParams?.title,
+          maxPages: pagesTotal,
+        }}>
+        {Blogs ? (
+          <div>
+            <ContentWidth>
+              <CardGrid blogs={Blogs} />
+            </ContentWidth>
+          </div>
+        ) : undefined}
+      </Search>
+    </>
   );
 }

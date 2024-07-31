@@ -8,13 +8,10 @@ export default function Header(props: { imageUrl: string }) {
       sx={{
         backgroundImage: props.imageUrl,
         backgroundSize: 'cover',
-        minHeight: 600,
-        display: 'flex',
-        justifyContent: 'center',
-        flexDirection: 'column',
-        alignItems: 'center',
-        textAlign: 'center',
+        backgroundPosition: 'center',
+        height: 450,
       }}
+      style={{ filter: 'grayscale(100%)' }}
     />
   );
 }

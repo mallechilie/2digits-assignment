@@ -16,12 +16,16 @@ const pages = [
 
 export default function Navbar() {
   return (
-    <Box sx={{ mb: '1px' }}>
-      <AppBar position="static">
+    <Box sx={{ mb: '1px', height: '80px' }}>
+      <AppBar
+        sx={{ height: '100%' }}
+        position="static"
+        style={{ background: 'radial-gradient(circle, #020365 0%, #01041F 99.95%)' }}>
         <ContentWidth
           sx={{
             display: 'flex',
             justifyContent: 'space-between',
+            alignItems: 'center',
           }}>
           <TitleButton />
 
@@ -31,7 +35,7 @@ export default function Navbar() {
                 key={page.name}
                 component={Link}
                 href={page.page}
-                sx={{ color: 'white', display: 'block' }}>
+                sx={{ color: 'white', display: 'block', textTransform: 'none' }}>
                 {page.name}
               </Button>
             ))}

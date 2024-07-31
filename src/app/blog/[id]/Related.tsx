@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
 import CardGrid from '@/components/CardGrid';
@@ -14,11 +15,13 @@ export default async function Related(props: { id: string }) {
   return Blogs ? (
     <WideBackground>
       <ContentWidth>
-        <Typography variant="h2" sx={{ color: '#0E1527' }}>
-          Gerelateerde blogs
-        </Typography>
+        <Box sx={{ py: '64px' }}>
+          <Typography variant="h2" sx={{ color: '#0E1527' }}>
+            Gerelateerde blogs
+          </Typography>
 
-        <CardGrid blogs={Blogs} />
+          <CardGrid blogs={Blogs} />
+        </Box>
       </ContentWidth>
     </WideBackground>
   ) : undefined;
