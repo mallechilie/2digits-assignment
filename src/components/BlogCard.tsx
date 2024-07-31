@@ -24,6 +24,7 @@ export default function BlogCard(props: { blog: Blog }) {
             aspectRatio: 350 / 240,
             width: '100%',
             backgroundImage: `url(${props.blog.banner_image.url})`,
+            backgroundPosition: 'center',
             backgroundSize: 'cover',
             display: 'flex',
             alignItems: 'flex-end',
@@ -33,16 +34,26 @@ export default function BlogCard(props: { blog: Blog }) {
           ))}
         </Box>
 
-        <Typography variant="h4" component="div">
+        <Typography variant="h5" component="div">
           {props.blog.title}
         </Typography>
 
-        <Typography variant="body1">
+        <Typography
+          variant="body1"
+          sx={{
+            display: '-webkit-box',
+            overflow: 'hidden',
+            WebkitBoxOrient: 'vertical',
+            WebkitLineClamp: 3,
+          }}>
           {(props.blog.content?.[0] as PreprBlogQuery_Blog_Blog_content_Text).text ??
             'Een samenvatting...'}
         </Typography>
 
-        <Button sx={{ pl: 0, color: 'black' }} component={Link} href={`/blog/${props.blog._id}`}>
+        <Button
+          sx={{ pl: 0, color: 'black', textTransform: 'none' }}
+          component={Link}
+          href={`/blog/${props.blog._id}`}>
           <Typography variant="body2">
             Lees meer <ArrowForwardIcon />
           </Typography>

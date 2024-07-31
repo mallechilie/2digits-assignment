@@ -1,11 +1,13 @@
 import * as React from 'react';
 
+import { Grid } from '@mui/material';
 import Box from '@mui/material/Box';
 import type { Variant } from '@mui/material/styles/createTypography';
 import Typography from '@mui/material/Typography';
 
 import type { Blog } from '@/Blog';
 import Tag from '@/components/Tag';
+import GridContainer from '@/components/wrappers/GridContainer';
 import type {
   PreprBlogQuery_Blog_Blog_content_ApplePodcast,
   PreprBlogQuery_Blog_Blog_content_Assets,
@@ -62,26 +64,30 @@ function asCorrectTextContent(
 
 export default function BlogComponent(props: { blog: Blog }) {
   return (
-    <Box>
-      {props.blog.categories.map((category) => (
-        <Tag tagName={category.body ?? 'Empty'} key={category.body} />
-      ))}
+    <GridContainer>
+      <Grid item xs={9}>
+        <Box>
+          {props.blog.categories.map((category) => (
+            <Tag tagName={category.body ?? 'Empty'} key={category.body} />
+          ))}
 
-      <Typography variant="h3">{props.blog.title}</Typography>
+          <Typography variant="h2">{props.blog.title}</Typography>
 
-      <Typography>
-        {props.blog.content?.map((content) => {
-          const _content = asCorrectTextContent(content);
-          return _content ? (
-            // @ts-ignore already checked type
-            <Typography variant={_content.format} key={_content}>
-              {_content.text}
-            </Typography>
-          ) : (
-            <Typography key={_content}>Non-text element: not implemented yet</Typography>
-          );
-        })}
-      </Typography>
-    </Box>
+          <Typography>
+            {props.blog.content?.map((content) => {
+              const _content = asCorrectTextContent(content);
+              return _content ? (
+                // @ts-ignore already checked type
+                <Typography variant={_content.format} key={_content}>
+                  {_content.text}
+                </Typography>
+              ) : (
+                <Typography key={_content}>Non-text element: not implemented yet</Typography>
+              );
+            })}
+          </Typography>
+        </Box>
+      </Grid>
+    </GridContainer>
   );
 }

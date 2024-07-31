@@ -7,7 +7,7 @@ export default function Home() {
     <main>
       <Welcome />
 
-      <ContentWidth>
+      <ContentWidth sx={{ py: '64px' }}>
         <Blogs />
       </ContentWidth>
     </main>

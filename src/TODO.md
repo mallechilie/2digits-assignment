@@ -37,8 +37,6 @@ TODO:
   - ~~Build page~~
   - ~~Show the blog HTML rendered on a safe way, without `dangerouslySetInnerHTML`~~
   - ~~Add `Gerelateerde blogs` section~~
-- refine
-  - As a user, I want to be able to find quicklinks at the bottom of the page so that I can access relevant information.
 - Out of scope
   - Test on 4k monitor
   - Write blog-post page
@@ -47,3 +45,4 @@ TODO:
   - Render non-text elements
   - Privacy statement
   - Terms and conditions
+  - fancy safe html rendering

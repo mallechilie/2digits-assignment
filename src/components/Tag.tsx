@@ -9,11 +9,12 @@ export default function Tag(props: { tagName: string }) {
       sx={{
         width: 'fit-content',
         borderRadius: 1,
-        backgroundColor: 'whitesmoke',
+        backgroundColor: '#EFEFF8',
         m: '5px',
-        p: '3px',
+        py: '4px',
+        px: '20px',
       }}>
-      <Typography>{props.tagName}</Typography>
+      <Typography>{props.tagName.toUpperCase()}</Typography>
     </Box>
   );
 }

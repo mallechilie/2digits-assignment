@@ -5,18 +5,14 @@ import type { ChangeEvent } from 'react';
 
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
-import { Pagination, TextField, ToggleButton, ToggleButtonGroup } from '@mui/material';
+import { Pagination, TextField } from '@mui/material';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
+import MyToggleButtonGroup from '@/app/blogs/MyToggleButtonGroup';
 import ContentWidth from '@/components/wrappers/ContentWidth';
 import WideBackground from '@/components/wrappers/WideBackground';
-
-function getStartTag(tagList: string[], tag: string = '') {
-  tag = tag.charAt(0).toUpperCase() + tag.slice(1);
-  return tagList.includes(tag) ? tag : '';
-}
 
 export default function Search(props: {
   params?: { page?: number; maxPages: number; tag?: string; title?: string };
@@ -28,10 +24,14 @@ export default function Search(props: {
   const { replace } = useRouter();
 
   const tags = ['Interview', 'Blog', 'Whitepaper'];
-  const [tag, setTag] = React.useState<string>(() => getStartTag(tags, props.params?.tag));
+  const getStartTag = (tag: string = '') => {
+    tag = tag.charAt(0).toUpperCase() + tag.slice(1);
+    return tags.includes(tag) ? tag : '';
+  };
+  const [tag, setTag] = React.useState<string>(() => getStartTag(props.params?.tag));
 
   const [title, setTitle] = React.useState<string>(() => props.params?.title ?? '');
-  const handleTag = (_event: React.MouseEvent<HTMLElement>, newTag: string) => {
+  const handleTag = (newTag: string) => {
     setTag(newTag);
     handleSearch(newTag, title);
   };
@@ -55,14 +55,16 @@ export default function Search(props: {
   return (
     <Box>
       <WideBackground>
-        <ContentWidth>
-          <Typography variant="h2" sx={{ color: '#0E1527' }}>
+        <ContentWidth sx={{ py: '32px' }}>
+          <Typography variant="h5" sx={{ color: '#0E1527' }}>
             Search for blogs
           </Typography>
 
-          <Box sx={{ display: 'flex' }}>
+          <Box sx={{ display: 'flex', my: '16px' }}>
             <TextField
-              sx={{ width: '100%' }}
+              sx={{ bgcolor: 'white', '& fieldset': { border: 'none' } }}
+              fullWidth
+              InputLabelProps={{ style: { color: '#0E1527' } }}
               label={'Search'}
               defaultValue={title}
               onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
@@ -75,33 +77,56 @@ export default function Search(props: {
               }}
             />
 
-            <Button sx={{ color: 'white', display: 'block' }} onClick={() => handleSearch()}>
+            <Button
+              sx={{
+                textTransform: 'none',
+                bgcolor: '#371172',
+                color: 'white',
+                display: 'block',
+                px: '32px',
+                ml: '24px',
+                '&:hover': {
+                  backgroundColor: '#571bb1',
+                },
+              }}
+              onClick={() => handleSearch()}>
               {'Search'}
             </Button>
           </Box>
         </ContentWidth>
       </WideBackground>
 
-      <ContentWidth>
-        <Typography variant="h2" sx={{ color: '#0E1527' }}>
+      <ContentWidth sx={{ py: '32px' }}>
+        <Typography variant="h5" sx={{ color: '#0E1527' }}>
           Topics
         </Typography>
 
-        <ToggleButtonGroup value={tag} exclusive onChange={handleTag}>
-          <ToggleButton value="">ALL BLOGS</ToggleButton>
-
-          {tags.map((tag) => (
-            <ToggleButton value={tag} key={tag}>
-              {tag}
-            </ToggleButton>
-          ))}
-        </ToggleButtonGroup>
+        <MyToggleButtonGroup
+          values={[
+            { value: '', label: 'ALL BLOGS' },
+            ...tags.map((tag) => ({ value: tag, label: tag })),
+          ]}
+          value={tag}
+          onChange={handleTag}
+          sx={{
+            mr: '8px',
+            py: '4px',
+            '&.Mui-selected': { bgcolor: '#371172', color: 'white' },
+            '&.Mui-selected:hover': { bgcolor: '#571bb1', color: 'white' },
+          }}
+        />
       </ContentWidth>
 
       {props.children}
 
-      <ContentWidth sx={{ display: 'flex', justifyContent: 'center' }}>
-        <Pagination count={props.params?.maxPages ?? 1} page={page} onChange={handlePage} />
+      <ContentWidth sx={{ display: 'flex', justifyContent: 'center', py: '80px' }}>
+        <Pagination
+          count={props.params?.maxPages ?? 1}
+          page={page}
+          onChange={handlePage}
+          shape="rounded"
+          sx={{ color: '#371172' }}
+        />
       </ContentWidth>
     </Box>
   );

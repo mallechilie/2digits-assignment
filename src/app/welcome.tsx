@@ -16,18 +16,23 @@ export default async function Welcome() {
       sx={{
         backgroundImage: `url(${page.page_header.image.url})`,
         backgroundSize: 'cover',
+        backgroundPosition: 'center',
         height: 600,
         textAlign: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
         overflow: 'hidden',
-      }}>
-      <Typography variant="h1" sx={{ color: 'white', width: 7 / 10, margin: 'auto' }}>
+      }}
+      style={{ filter: 'grayscale(100%)' }}>
+      <Typography
+        variant="h1"
+        sx={{ color: 'white', width: 7 / 10, m: '32px', textTransform: 'uppercase' }}>
         {page.page_header.title}
       </Typography>
 
-      <Typography
-        variant="h4"
-        sx={{ color: 'white', width: 8 / 10, margin: 'auto' }}
-        component="div">
+      <Typography variant="h5" sx={{ color: 'white', width: 6 / 10 }} component="div">
         {page.page_header.text}
       </Typography>
     </Box>

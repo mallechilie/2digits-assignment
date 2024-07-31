@@ -13,7 +13,7 @@ export default async function Page({ params }: { params: { id: string } }) {
     <Box>
       <Header imageUrl={`url(${Blog.banner_image.url})`} />
 
-      <ContentWidth>
+      <ContentWidth sx={{ py: '64px' }}>
         <BlogComponent blog={Blog} />
       </ContentWidth>
 
